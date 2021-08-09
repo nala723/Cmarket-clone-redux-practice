@@ -1,3 +1,340 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #F8E16C;
+}
+
+#item-list-container {
+  display: table; /* table !! */
+  margin: 0 auto;
+  width: 100%;
+  height: calc(100vh - 5rem); /* body's height -  nav's height!*/
+}
+#item-list-body {
+  display: table-cell;
+  padding: 5rem;
+  width: 100%;
+}
+
+#shopping-body {
+ display: flex;
+ padding: 5rem;
+ width: 100%;
+}
+.todoli {
+  flex: 2.5;
+
+}
+#shopping-cart-container {
+  display: flex;
+ 
+}
+
+
+.cart-item-body {
+  display: flex;
+  align-items: center;
+  width: 40rem;
+  height: 12rem;
+  margin-bottom: 2rem;
+  margin-left: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  background-color: #ffc2b4; 
+  transition: all 0.2s ease-in-out;
+}
+
+.cart-item-checkbox {
+  width: 16px;
+  height: 16px;
+  /* margin: 1rem; */
+}
+.img {
+  width: 9.5rem;
+  height: 9.5rem;
+  min-width: 10px;
+  min-height: 10px;
+  margin: 2rem;
+  margin-left: 1rem;
+  object-fit: cover; 
+}
+
+.card-item-divde{
+  display: flex;
+  width: 63%; 
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+/* .card-item-info {
+  
+}
+
+.cart-item-price {
+  
+} */
+.cart-item-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+
+.left {
+  display: flex;
+  /* margin-left:10rem; */
+  /* width: 10rem; */
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+
+.cart-item-quantity {
+  
+  width: 100px;
+  background: #F9F9F9;
+  text-align: center;
+  transform: translateY(-50%);
+  padding-left: 15px;
+  font-size: 1rem;
+  height: 2rem;
+
+}
+.cart-item-delete {
+  transform: translateY(-100%) translateX(80%);
+  border-style: none;
+  border-radius: 100%;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  /* box-shadow: 2px 2px 3px grey; */
+  color:  #858585;;
+  cursor: pointer;
+}
+
+
+#order-summary-container {
+  flex:1;
+}
+
+
+
+
+#item-list-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  padding-bottom: 2rem;
+  margin: 0.5rem;
+}
+
+
+.item {
+  display: inline-block;
+  width: 300px;
+  height: 400px;
+  margin: 1rem;
+  border-radius: 0.7rem;
+  background-color: #ffc2b4; 
+  transition: all 0.2s ease-in-out;
+}
+
+.item:hover {
+  background-color: #f8ffe5;
+  transform: translateY(-10%);
+  box-shadow: 0px 5px 10px #ff99b1;
+  
+}
+
+.item-img {
+  width: 100%;
+  height: 70%;
+  padding: 2rem;
+  padding-bottom: 1.3rem;
+  /* border-radius: 0.5rem;   how?? */
+  object-fit: cover; /*this makes picture to be fit for the size!  */
+}
+.item-name {
+  float: left;
+  margin-left: 2rem;
+
+}
+.item-point {
+ float: right;
+ margin-right: 2rem;
+
+}
+.item-blank {
+  height: 2rem;
+}
+.item-btn {
+  
+  width: 39%;
+  height: 2rem;
+  border: none;
+  display: inline-block;
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+  font-weight: 500;
+  font-size: 10ox;
+  color: #858585;
+  border-radius: 2rem;
+
+}
+.todo{
+  margin-left: 1.6rem;
+}
+
+.item-btn:hover{
+  background-color: #00c49a;
+  color:  #f8ffe5;
+  box-shadow: 1px 2px 3px #00666b;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+#nav-body {
+ height: 5rem;
+ top: 0;
+ background-color: #00b38c;
+ display: grid;  
+ place-items: center;
+}
+
+
+#title {
+ font-size: 2.5rem;
+ font-weight: 600;
+}
+
+#name{
+  vertical-align: middle; /*why were they changed their position??*/
+}
+#logo {
+  width: 40px;
+  vertical-align: middle;
+  
+}
+
+#menu {
+ margin: 1.5rem; /* Would it be better than use flex 2 or thing?(Cause that is too flexable) */
+ right: 0;
+ position: absolute;
+ font-weight: 300;
+}
+
+a {
+  text-decoration: none; /*remove bottom line of the linked text */
+  color: black;
+  font-size: 1.3rem;
+  margin: 0.7rem;
+  font-weight: 400;
+  vertical-align: middle;
+}
+
+a:hover {
+  color: white;
+}
+
+#nav-item-counter {
+  background-color: #f8e16c;
+  border-radius: 1rem;
+  margin-left: 0.3rem;
+  margin-bottom: 0.2rem;
+  display: inline-block;
+  height: 1.5rem;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.notification-container {
+  font-size: 1rem;
+  position: fixed;
+  z-index: 999999;
+  top: 80px;
+  right: 12px;
+}
+
+
+.notification {
+  transition: transform .6s ease-in-out;
+  animation: toast-in-right .6s;
+  background: #4000c7;
+  transition: .3s ease;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,.6);
+  color: #000;
+  opacity: .9;
+  font-weight: 600;
+
+  height: 50px;
+  width: 360px;
+  color: #fff;
+  padding: 15px;
+  margin: 10px;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: opacity 2s;
+}
+
+@keyframes toast-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+@media (max-width: 1000px) {
+  #cart-item-list {
+    width: 100%;
+  }
+
+  #order-summary-container{
+    width: 100%;
+    float: left;
+  }
+  #shopping-cart-container{
+    display: block;
+  }
+}
+
+
+
+/*react initial style
+ body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
 .App {
   text-align: center;
 }
@@ -35,4 +372,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
