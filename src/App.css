@@ -234,6 +234,17 @@ body {
  font-weight: 300;
 }
 
+#lmenu {
+  display: none;
+
+}
+
+.fa-bars {
+  color: white;
+}
+
+
+
 a {
   text-decoration: none; /*remove bottom line of the linked text */
   color: black;
@@ -314,6 +325,43 @@ a:hover {
   #shopping-cart-container{
     display: block;
   }
+  #lmenu {
+    display: block;
+    position: absolute;
+    top:0;
+    right: 0;
+    font-size: 1.8rem;
+    transform: translate(-90%, 60%);
+    cursor: pointer;
+  }
+  .fa-times {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+}
+#title {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transform: translate(10%,70%);
+  left:3rem;
+ }
+ #logo {
+  position: absolute;
+  width: 20px;
+  transform: translate(-100%,20%);
+  
+}
+ 
+#item-list-title {
+  font-size: 3rem;
+  width:100%;
+  font-weight: 800;
+  line-height: 4rem;
+  padding-bottom: 1rem;
+  margin: 0.5rem;
+  transform: translate(15%,-10%);
+}
 }
 
 

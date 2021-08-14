@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
+import * as FaIcons from 'react-icons/fa';
+import * as AiIcons from 'react-icons/ai';
 
 export default function Nav(){
     const state = useSelector(state => state.itemReducer) // state 또 selector로 받아옴!
+    const [click, setClick] = useState(false);
+    const [button, setButton] = useState(true);
+
+    const showButton = () => {
+      if(window.innerWidth <= 960){
+        setButton(false);
+      }else {
+        setButton(true);
+      }
+    }
+   
+    useEffect(()=>{
+      showButton();
+    },[])
+
+    window.addEventListener('resize', showButton);
 
  return (
   <div id="nav-body">
@@ -17,13 +35,16 @@ export default function Nav(){
         </svg>
          <span id="name"> DoorNot </span>
      </span>
-     <div id="menu">
+     <div id="lmenu" onClick={()=>setClick(!click)}>
+       {!click ? <FaIcons.FaBars className="fas fa-bars" /> : <AiIcons.AiOutlineClose className="fas fa-times"/>}
+     </div>
+    { button && (<div id="menu">
          <Link to='/'>To-do list </Link>
          <Link to='/shoppingCart'>
            내 todo 
             <span id="nav-item-counter">{state.todos.length + state.notTodos.length}</span>
          </Link>
-     </div>
+     </div>)}
   </div>
  )
 }

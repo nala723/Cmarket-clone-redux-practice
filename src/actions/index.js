@@ -52,7 +52,7 @@ export const setQuanity = (itemId, quanity) => {
 // 비동기 : 액션을 구현한 후, dispatch를 이용해 다른 동기 액션을 호출합니다.
 //enqueueNotification 메시지가 queue에 쌓임
 //dequeueNotification 메시지가 queue에서 사라짐
-export const notify = (message, dismissTime = 3000) => dispatch => {
+export const notify = (message, dismissTime = 10000) => dispatch => {
   const uuid = Math.random()
   dispatch(enqueueNotification(message,dismissTime,uuid))
   setTimeout(()=>{
